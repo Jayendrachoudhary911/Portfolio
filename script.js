@@ -64,3 +64,33 @@ document.addEventListener("DOMContentLoaded", function() {
         content.style.display = 'block';
     }
 });
+
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var formData = new FormData(this);
+    fetch('https://script.google.com/macros/s/AKfycbwTt_MVz5hr3_glCJZFtImRqt2OhSxYq0fW1ihQMdQpvcnN5J0Ug9KgGlF9Dlv-OMil/exec', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+      if (data === "Success") {
+        var popup = document.getElementById('pop');
+        popup.classList.add('active');
+        setTimeout(() => {
+          popup.classList.remove('active');
+          document.getElementById('contactForm').reset();
+        }, 4000); // Show popup for 4 seconds
+      } else {
+        alert('There was a problem with the submission. Please try again.');
+      }
+    })
+    .catch(error => console.error('Error:', error));
+  });
+
+
+  document.getElementById('scrollButton').addEventListener('click', function() {
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+});
+
