@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
     var formData = new FormData(this);
-    fetch('https://script.google.com/macros/s/AKfycbwTt_MVz5hr3_glCJZFtImRqt2OhSxYq0fW1ihQMdQpvcnN5J0Ug9KgGlF9Dlv-OMil/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbwgzzpf8l6uY7R_jqhoumXAvNn8SpdHRrU3B1Pd1mfpCNTLeyQsmrCMJJA1nZI1BTFy/exec', {
       method: 'POST',
       body: formData
     })
