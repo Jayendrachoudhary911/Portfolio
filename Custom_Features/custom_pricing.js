@@ -1,4 +1,4 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbxCbi6kFZUDpu8_ZzOrL95M3_jtM7GGbHPef63l1hHeYVrSaqISVOHXcTf6cPLrYhRhgw/exec'; // Replace with your Google Apps Script URL
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwOsZNxCbeLsuRf4lhQWsQv7Pl2qwIrhaJWROgFCb13MdKYCm454-W-W5o32cIAbwQVqA/exec'; // Replace with your Google Apps Script URL
 
 function calculatePrice() {
     let price = 0;
