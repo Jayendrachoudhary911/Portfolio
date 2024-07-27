@@ -664,6 +664,10 @@ main {
    .footer-logo-container {
     justify-content: left;
    }
+   .contact_us_section {
+    margin: 0 0 50px 0;
+    gap: 20px;
+   }
 }
 
 
@@ -684,3 +688,76 @@ main {
     background-color: #555;
 }
 
+
+
+.contact_us_section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+    background-color: #ffffff;
+    width: 100%;
+}
+.contact_text {
+    font-size: 28px;
+    font-weight: bolder;
+}
+.contact-form {
+    background-color: #fff;
+    padding: 20px;
+    width: 300px;
+    position: relative;
+  }
+  .contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  .contact-form input, .contact-form textarea {
+    width: 90%;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    font-family: 'Gilda Display', serif;
+    color: #0c0a07;
+    font-weight: 300;
+  }
+  .contact-form button {
+    background-color: #333;
+    color: #fff;
+    border: 2px solid transparent;
+    padding: 10px 28px;
+    border-radius: 10px;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  .contact-form button:hover {
+    background-color: #f3fff1;
+    border: 1px solid #333;
+    color: #1c291a;
+  }
+  .pop {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 270px;
+    transform: translate(-50%, -50%);
+    background-color: #deffd3;
+    padding: 20px;
+    color: #34492e;
+    font-weight: bolder;
+    border: 1px solid #dddddd00;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+  }
+  .pop.active {
+    display: block;
+  }
+  .pop p {
+    font-size: 18px;
+    text-align: center;
+    margin: 35% 5%;
+  }
