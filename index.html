@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="spacer medium"></div>
-            <img class="banner" src="https://dcwebtech.wordpress.com/wp-content/uploads/2024/07/dc-webtechs.png" alt="WiYou! Logo">
+            <img class="banner" src="./assets/hero.png" alt="WiYou! Logo">
     </div>
     <div class="section padding">
         <div class="flex vertical center prjcts">
@@ -78,13 +78,13 @@
                     </div>
                 </div>
                 <div class="flex-item">
-                        <img class="demo_image" src="https://dcwebtech.wordpress.com/wp-content/uploads/2024/07/dc-webtechs-1.png?w=1024" alt="WiYou! Work">
+                        <img class="demo_image" src="./assets/hbd_hero.png" alt="WiYou! Work">
                 </div>
             </div>
             <div class="spacer medium"></div>
             <div class="flex-container">
                 <div class="flex-item">
-                        <img class="demo_image" src="https://s0.wp.com/wp-content/themes/pub/twentytwentyfour/assets/images/windows.webp" alt="Windows of a building in Nuremberg, Germany">
+                        <img class="demo_image" src="https://s0.wp.com/wp-content/themes/pub/twentytwentyfour/assets/images/windows.webp" alt="WiYou! Work">
                 </div>
                 <div class="flex-item">
                     <h3 class="flex_subtitle">Be familiar with your web.</h3>
@@ -98,6 +98,33 @@
         </div>
     </div>
 </main>
+
+<div class="popup-background" id="popup-bg"></div>
+
+<div class="popp" id="popup-form">
+    <div class="popup-content" id="plan-info">Please select a plan to see the details.</div>
+    <form class="popup-form" id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="country">Country:</label>
+        <select id="country" name="country" required>
+            <!-- Add country options here -->
+        </select>
+        
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+        
+        <label for="message">Plan:</label>
+        <input class="textarea" id="message" name="message" readonly></input>
+        
+        <button type="submit">Submit</button>
+    </form>
+    <div class="success-message" id="success-message"><p class="mes">Thank you for your submission! We will get back to you soon.</p></div>
+</div>
 <main>
     <div class="section padding">
         <div class="padding-small">
@@ -167,8 +194,8 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <div class="btn-container">
-                                <h3>Custom Edits</h3>
+                            <div class="plan-buttons">
+                                <button id="basic-plan-sch-btn">Basic Plan</button>
                             </div>
                         </div>
                      <div class="pricing-plan pro_plan">
@@ -237,8 +264,8 @@
                             </tbody>
                         </table>
                         
-                        <div class="btn-container">
-                            <h3>Best Plan and Custom Edits</h3>
+                        <div class="plan-buttons">
+                            <button id="pro-plan-sch-btn">Pro Plan</button>
                         </div>
                     </div>
                 </div>
@@ -313,8 +340,8 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="btn-container">
-                            <h3>Custom Edits</h3>
+                        <div class="plan-buttons">
+                            <button id="basic-plan-btn">Basic Plan</button>
                         </div>
                     </div>
                     <div class="pricing-plan bus_pro_plan">
@@ -375,8 +402,8 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="btn-container">
-                            <h3>Best Plan and Custom Edits</h3>
+                        <div class="plan-buttons">
+                            <button id="pro-plan-btn">Pro Plan</button>
                         </div>
                     </div>
             </div>
@@ -448,5 +475,6 @@
 
 <button id="scrollToTopBtn" class="scroll-to-top-btn"><span class="material-symbols-outlined"> arrow_upward </span></button>
 <script src="./script.js"></script>
+<script src="./pricingform.js"></script>
 </body>
 </html>
