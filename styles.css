@@ -761,3 +761,137 @@ main {
     text-align: center;
     margin: 35% 5%;
   }
+
+
+  .plan-buttons {
+    display: flex;
+    justify-content: space-around; 
+    margin: 20px 0;
+}
+.plan-buttons button {
+    padding: 10px 20px;
+    font-size: 16px; 
+    cursor: pointer;
+}
+.popp {
+    display: none;
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    z-index: 9; 
+    width: 300px;
+    border-radius: 18px;
+    background: #ffffff;
+    padding: 20px;
+}
+.popup-content {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.popup-form {
+    display: flex;
+    flex-direction: column;
+}
+.popup-form input, .popup-form select {
+    margin: 5px 0;
+    padding: 10px; 
+    font-size: 16px;
+    background-color: #d8d8d846;
+    border: none;
+    border-radius: 10px;
+}
+.popup-form button {
+    padding: 10px;
+    background-color: #d6ffd6; 
+    color: #3b613b; 
+    font-weight: bolder;
+    border: none; 
+    border-radius: 10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.popup-form button:hover {
+    background-color: #3b613b;
+    color: #d6ffd6;
+}
+.popup-background {
+    display: none;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.4); 
+    z-index: 8;
+}
+.success-message {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    background-color: #deffd3ce;
+    backdrop-filter: blur(60px);
+    padding: 20px;
+    color: #34492e;
+    font-weight: bolder;
+    border-radius: 20px;
+    border: 1px solid #dddddd00;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+}
+.success-message .mes {
+    text-align: center;
+    position: absolute;
+    font-size: 21px;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+}
+
+#basic-plan-btn, #basic-plan-sch-btn {
+    background-color: #d6f0ff;
+    color: #364953;
+    border: 2px solid #364953;
+    border-radius: 10px;
+    padding: 20px 28px;
+    font-weight: bolder;
+    transition: all 0.3s ease-in-out;
+}
+#basic-plan-btn:hover, #basic-plan-sch-btn:hover {
+    background-color: #364953;
+    border: 2px solid #d6f0ff;
+    color: #d6f0ff;
+}
+#pro-plan-btn, #pro-plan-sch-btn {
+    background-color: #ffedba;
+    color: #64593b;
+    border: 2px solid #64593b;
+    border-radius: 10px;
+    padding: 20px 28px;
+    font-weight: bolder;
+    transition: all 0.3s ease-in-out;
+}
+#pro-plan-btn:hover, #pro-plan-sch-btn:hover {
+    background-color: #64593b;
+    border: 2px solid #ffedba;
+    color: #ffedba;
+}
+
+.popup-form .textarea {
+    margin: 5px 0 10px 0;
+    padding: 10px; 
+    height: 50px;
+    width: 280px;
+    font-size: 16px;
+    background-color: #d8d8d846;
+    border: none;
+    border-radius: 10px;
+}
