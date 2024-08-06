@@ -213,28 +213,56 @@ form {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(49, 49, 49, 0.336);
-    backdrop-filter: blur(13px);
+    z-index: 999;
+    background-color: #e2f5da5b;
+    backdrop-filter: blur(30px);
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 .popup-content {
-    background-color: #e8ffdfe3;
-    padding: 20px;
-    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 60px 40px;
+    border-radius: 20px;
+    height: 200px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.027);
+    animation: popuper 1s ease-out;
+}
+@keyframes popuper {
+  0% {
+    width: 500px;
+    height: auto;
+  }
+  100% {
+    width: 70vw;
+  }
+}
+@keyframes popuper_mob {
+  0% {
+    width: 500px;
+    height: 100px;
+  }
+  100% {
+    padding: 50% 20px 0 20px;
+    height: 60vh;
+  }
 }
 .popup-content h2 {
-    color: #253a1be3;
+    color: #1a2418;
 }
 .popup_button {
     padding: 10px 16px;
     margin: 20px 0;
     border-radius: 10px;
-    background-color: #47693a;
-    color: #e8ffdf;
+    background-color: #fcfffb;
+    border: 2px solid #293627;
+    color: #1a2418;
     user-select: none;
+    transition: all 0.3s ease-in-out;
+}
+.popup_button:hover {
+  background-color: #32422f;
+  color: #fcfffb;
 }
 
 
@@ -306,5 +334,6 @@ button:hover {
     }
     .popup-content {
         margin: 10px 40px;
+        animation: popuper_mob 1s ease-out;
     }
 }
