@@ -237,16 +237,7 @@ form {
     width: 70vw;
   }
 }
-@keyframes popuper_mob {
-  0% {
-    width: 500px;
-    height: 100px;
-  }
-  100% {
-    padding: 50% 20px 0 20px;
-    height: 60vh;
-  }
-}
+
 .popup-content h2 {
     color: #1a2418;
 }
@@ -334,6 +325,5 @@ button:hover {
     }
     .popup-content {
         margin: 10px 40px;
-        animation: popuper_mob 1s ease-out;
     }
 }
