@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Creator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .invoice-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+        .invoice-form {
+            width: 45%;
+        }
+        .invoice-preview {
+            width: 45%;
+            border: 1px solid #ddd;
+            padding: 20px;
+            position: relative;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .feature-item {
+            padding: 10px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            cursor: pointer;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #qrCodeContainer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="invoice-container">
+    <!-- Invoice Form -->
+    <div class="invoice-form">
+        <h2>Create Invoice</h2>
+        <form id="invoiceForm">
+            <label for="invoiceNo">Invoice No:</label>
+            <input type="text" id="invoiceNo" name="invoiceNo"><br><br>
+
+            <label for="invoiceDate">Date:</label>
+            <input type="date" id="invoiceDate" name="invoiceDate"><br><br>
+
+            <label for="clientName">Client Name:</label>
+            <input type="text" id="clientName" name="clientName"><br><br>
+
+            <label for="mobileNumber">Mobile Number:</label>
+            <input type="text" id="mobileNumber" name="mobileNumber"><br><br>
+
+            <label for="firmName">Firm Name:</label>
+            <input type="text" id="firmName" name="firmName"><br><br>
+
+            <label for="address">Firm Address:</label>
+            <textarea id="address" name="address"></textarea><br><br>
+
+            <h3>Select Features:</h3>
+            <div class="features">
+                <!-- Features will be added dynamically by JavaScript -->
+            </div>
+        </form>
+    </div>
+
+    <!-- Invoice Preview -->
+    <div class="invoice-preview" id="invoicePreview">
+        <h2>Invoice Preview</h2>
+        <p>Invoice No: <span id="previewInvoiceNo"></span></p>
+        <p>Date: <span id="previewInvoiceDate"></span></p>
+        <p><strong>BILLED TO:</strong></p>
+        <p>Name: <span id="previewClientName"></span></p>
+        <p>Mobile: <span id="previewMobileNumber"></span></p>
+        <p>Firm: <span id="previewFirmName"></span></p>
+        <p>Address: <span id="previewAddress"></span></p>
+        
+        <h3>Items:</h3>
+        <ul id="itemList">
+            <!-- Items will be added dynamically by JavaScript -->
+        </ul>
+        <p>Subtotal: $<span id="subtotal">0</span></p>
+        <p>Tax: $<span id="tax">0</span></p>
+        <h3>Total: $<span id="total">0</span></h3>
+
+        <!-- Print and Share Buttons -->
+         <!-- QR Code will be generated here -->
+    </div>
+
+    
+</div>
+        <button id="saveAsPNGButton">Save as PNG</button>
+        <button id="shareButton">Share Invoice</button>
+        <button id="printButton">Print Invoice</button>
+    
+        <!-- QR Code Container -->
+        <div id="qrCodeContainer"></div>
+        <button class="save-button" type="button" onclick="saveQRCode()">Save QR Code</button>
+
+<!-- Include QRCode.js library -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+<script src="invoice.js"></script>
+
+</body>
+</html>
