@@ -222,11 +222,16 @@ form {
 }
 .popup-content {
     background-color: #ffffff;
-    padding: 60px 40px;
+    padding: 20px 40px;
     border-radius: 20px;
-    height: 200px;
+    height: 340px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.027);
-    animation: popuper 1s ease-out;
+}
+.popup-content a {
+  text-decoration: none;
+}
+.popup-content iframe {
+  border: none;
 }
 @keyframes popuper {
   0% {
@@ -237,7 +242,16 @@ form {
     width: 70vw;
   }
 }
-
+@keyframes popuper_mob {
+  0% {
+    width: 500px;
+    height: 100px;
+  }
+  100% {
+    padding: 50% 20px 0 20px;
+    height: 60vh;
+  }
+}
 .popup-content h2 {
     color: #1a2418;
 }
@@ -325,5 +339,6 @@ button:hover {
     }
     .popup-content {
         margin: 10px 40px;
+        animation: popuper_mob 1s ease-out;
     }
 }
