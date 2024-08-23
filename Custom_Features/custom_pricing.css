@@ -302,6 +302,9 @@ button:hover {
         width: 100%;
         margin: 50px;
     }
+    .popup-content .donePlayer {
+      padding: 0px;
+    }
     .form_main_body {
         width: 100%;
     }
@@ -319,11 +322,7 @@ button:hover {
     .breadcrumb {
         background-color: #ecdcb673;
     }
-    .donePlayer {
-        padding: 0;
-    }
     .popup-content {
-        width: 300px;
         margin: 10px 40px;
     }
 }
