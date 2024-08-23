@@ -319,7 +319,11 @@ button:hover {
     .breadcrumb {
         background-color: #ecdcb673;
     }
+    .donePlayer {
+        padding: 0;
+    }
     .popup-content {
+        width: 300px;
         margin: 10px 40px;
     }
 }
