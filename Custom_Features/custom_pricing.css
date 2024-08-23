@@ -207,7 +207,7 @@ form {
   
   /* Popup message styling */
   .popup {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
@@ -222,7 +222,7 @@ form {
 }
 .popup-content {
     background-color: #ffffff;
-    padding: 20px 40px;
+    padding: 0px 40px 30px 40px;
     border-radius: 20px;
     height: 550px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.027);
@@ -233,25 +233,7 @@ form {
 .popup-content .donePlayer {
   padding: 30px;
 }
-@keyframes popuper {
-  0% {
-    width: 500px;
-    height: auto;
-  }
-  100% {
-    width: 70vw;
-  }
-}
-@keyframes popuper_mob {
-  0% {
-    width: 500px;
-    height: 100px;
-  }
-  100% {
-    padding: 50% 20px 0 20px;
-    height: 60vh;
-  }
-}
+
 .popup-content h2 {
     color: #1a2418;
 }
@@ -339,6 +321,5 @@ button:hover {
     }
     .popup-content {
         margin: 10px 40px;
-        animation: popuper_mob 1s ease-out;
     }
 }
