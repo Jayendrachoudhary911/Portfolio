@@ -232,7 +232,7 @@ form {
 }
 .popup-content .donePlayer {
   padding: 30px;
-    margin: 0 4%;
+  margin: 0 4%;
 }
 .popup-content h6 {
   color: #686868;
@@ -313,6 +313,7 @@ button:hover {
     }
     .popup-content .donePlayer {
       padding: 0px;
+      margin: 0;
     }
     .form_main_body {
         width: 100%;
