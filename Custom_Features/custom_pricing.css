@@ -232,6 +232,7 @@ form {
 }
 .popup-content .donePlayer {
   padding: 30px;
+    margin: 0 4%;
 }
 .popup-content h6 {
   color: #686868;
