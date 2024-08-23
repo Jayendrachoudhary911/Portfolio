@@ -207,7 +207,7 @@ form {
   
   /* Popup message styling */
   .popup {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
@@ -222,7 +222,7 @@ form {
 }
 .popup-content {
     background-color: #ffffff;
-    padding: 0px 40px 30px 40px;
+    padding: 20px 40px;
     border-radius: 20px;
     height: 550px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.027);
@@ -233,9 +233,15 @@ form {
 .popup-content .donePlayer {
   padding: 30px;
 }
-
-.popup-content h2 {
+.popup-content h6 {
+  color: #686868;
+  font-family: 'Nunito', sans-serif;
+}
+.popup-content h4 {
     color: #1a2418;
+    font-size: 22px;
+    font-weight: bolder;
+    font-family: 'Nunito', sans-serif;
 }
 .popup_button {
     padding: 10px 16px;
@@ -244,6 +250,8 @@ form {
     background-color: #fcfffb;
     border: 2px solid #293627;
     color: #1a2418;
+    font-weight: bolder;
+    font-family: 'Nunito', sans-serif;
     user-select: none;
     transition: all 0.3s ease-in-out;
 }
