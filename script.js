@@ -94,11 +94,3 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
 });
 
-document.getElementById('closeBtn').addEventListener('click', function() {
-    var banner = document.getElementById('banner');
-    banner.style.display = 'none';
-    
-    var header = document.getElementById('header');
-    header.style.marginTop = '0';
-  });
-  

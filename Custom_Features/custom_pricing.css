@@ -213,52 +213,28 @@ form {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 999;
-    background-color: #e2f5da5b;
-    backdrop-filter: blur(30px);
+    background-color: rgba(49, 49, 49, 0.336);
+    backdrop-filter: blur(13px);
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 .popup-content {
-    background-color: #ffffff;
-    padding: 20px 40px;
-    border-radius: 20px;
-    height: 550px;
+    background-color: #e8ffdfe3;
+    padding: 20px;
+    border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.027);
 }
-.popup-content a {
-  text-decoration: none;
-}
-.popup-content .donePlayer {
-  padding: 30px;
-  margin: 0 4%;
-}
-.popup-content h6 {
-  color: #686868;
-  font-family: 'Nunito', sans-serif;
-}
-.popup-content h4 {
-    color: #1a2418;
-    font-size: 22px;
-    font-weight: bolder;
-    font-family: 'Nunito', sans-serif;
+.popup-content h2 {
+    color: #253a1be3;
 }
 .popup_button {
     padding: 10px 16px;
     margin: 20px 0;
     border-radius: 10px;
-    background-color: #fcfffb;
-    border: 2px solid #293627;
-    color: #1a2418;
-    font-weight: bolder;
-    font-family: 'Nunito', sans-serif;
+    background-color: #47693a;
+    color: #e8ffdf;
     user-select: none;
-    transition: all 0.3s ease-in-out;
-}
-.popup_button:hover {
-  background-color: #32422f;
-  color: #fcfffb;
 }
 
 
@@ -310,10 +286,6 @@ button:hover {
     form {
         width: 100%;
         margin: 50px;
-    }
-    .popup-content .donePlayer {
-      padding: 0px;
-      margin: 0;
     }
     .form_main_body {
         width: 100%;
