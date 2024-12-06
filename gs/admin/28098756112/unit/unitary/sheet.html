@@ -6,6 +6,7 @@
     <title>Data Entry Web App</title>
     <link rel="icon" type="image/png" href="https://wiyou.vercel.app/assets/logo.png">
     <style>
+        /* Same styles as before */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -16,32 +17,38 @@
             height: 100vh;
             background-color: #ffffff;
         }
+        .container {
+            max-width: 500px;
+            width: 100%;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
         .form-group {
-            margin: 15px;
+            margin-bottom: 15px;
         }
         label {
             display: block;
-            margin: 5px 45px;
-            font-weight: bolder;
+            margin-bottom: 5px;
+            font-weight: bold;
         }
-        input[type="text"], input[type="email"] {
-            width: 92%;
-            margin: 10px;
+        input, select {
+            width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            font-size: 14px;
         }
         .button {
+            width: 100%;
             background-color: #020202;
             color: white;
             padding: 10px;
-            margin: 0 30px;
             font-size: 16px;
-            border: 1px solid transparent;
+            border: none;
             border-radius: 8px;
             cursor: pointer;
-            width: 180px;
-            font-weight: bolder;
+            font-weight: bold;
             transition: background 0.3s ease-in-out;
         }
         .button:hover {
@@ -49,77 +56,128 @@
             color: #020202;
             border: 1px solid #020202;
         }
-        .loading {
+        .loading, .popup {
             display: none;
             padding: 10px;
+            margin-top: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .loading {
             background-color: #e6e6e6;
             color: #1a1a1a;
-            font-weight: bolder;
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 20px;
+            font-weight: bold;
         }
         .popup {
-            display: none;
-            padding: 10px;
             background-color: #dff0d8;
             color: #3c763d;
-            font-weight: bolder;
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 20px;
+            font-weight: bold;
         }
-        .sheet {
-            display: flex;
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            input, select {
+                padding: 8px;
+            }
+            .button {
+                font-size: 14px;
+                padding: 12px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2 style="font-weight: bolder; margin: 25px;">Data Entry Form</h2>
-        <div class="sheet">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" required>
-            </div>
-            <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" id="address" required>
-            </div>
-            <div class="form-group">
-                <label for="contact">Contact No.</label>
-                <input type="text" id="contact" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="website">Website</label>
-                <input type="text" id="website" required>
-            </div>
+        <h2>Data Entry Form</h2>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+            <label for="pin">Unique 6-Digit Pin</label>
+            <input type="text" id="pin" maxlength="6" placeholder="Enter pin" required>
+        </div>
+        <div class="form-group">
+            <label for="resources">Resources</label>
+            <select id="resources" disabled>
+                <option value="">Select a resource</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="progress">Progress (%)</label>
+            <input type="number" id="progress" min="0" max="100" placeholder="Enter progress in %" required>
         </div>
         <button class="button" onclick="submitData()">Submit</button>
         <div class="loading">Sending data, please wait...</div>
-        <div class="popup">Data submitted successfully!</div>
+        <div class="popup">
+            <div>Data submitted successfully!</div>
+            <button onclick="clearForm()">Close</button>
+        </div>
     </div>
 
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzDhGjyHt19r20tdaoa1RTrPkjhf6maLUPKRxdgObXdsR6wQepcsSexJIumV70Ji3ddEw/exec';  // Replace with your deployed web app URL
+        // Predefined pins and their corresponding resources
+        const pinResourceMapping = {
+            "123456": ["HTML Basics", "CSS Basics", "JavaScript Introduction"],
+            "234567": ["Python Basics", "Data Structures", "Machine Learning"],
+            "345678": ["React", "Node.js", "Express"],
+            "456789": ["AWS Basics", "Google Cloud", "Azure"]
+        };
+
+        // Update Resources dropdown based on Pin
+        document.getElementById('pin').addEventListener('input', function () {
+            const pin = this.value;
+            const resourcesDropdown = document.getElementById('resources');
+
+            // Clear existing options
+            resourcesDropdown.innerHTML = '<option value="">Select a resource</option>';
+            resourcesDropdown.disabled = true;
+
+            // Check if the pin exists in the mapping
+            if (pinResourceMapping[pin]) {
+                const resources = pinResourceMapping[pin];
+                resources.forEach(resource => {
+                    const option = document.createElement('option');
+                    option.value = resource;
+                    option.textContent = resource;
+                    resourcesDropdown.appendChild(option);
+                });
+                resourcesDropdown.disabled = false;
+            }
+        });
+
+        // Simple encryption function
+        function encryptData(data) {
+            const encryptedData = btoa(data); // Base64 encoding (simple encryption)
+            return encryptedData;
+        }
+
+        // Submit data to Google Sheets
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyekiTYyOxcm3wVHK2DSDaP_9E8EXi9WrH50xM_3GF3qsfz3mcfyAabDocWdDzN3oV81Q/exec';
 
         function submitData() {
             const name = document.getElementById('name').value;
-            const address = document.getElementById('address').value;
-            const contact = document.getElementById('contact').value;
-            const email = document.getElementById('email').value;
-            const website = document.getElementById('website').value;
+            const pin = document.getElementById('pin').value;
+            const resource = document.getElementById('resources').value;
+            const progress = document.getElementById('progress').value;
+
+            if (!name || !pin || !resource || !progress) {
+                alert("Please fill out all fields!");
+                return;
+            }
+
+            const encryptedPin = encryptData(pin);
+            const encryptedResource = encryptData(resource);
 
             const data = {
                 name: name,
-                address: address,
-                contact: contact,
-                email: email,
-                website: website
+                pin: encryptedPin,
+                resource: encryptedResource,
+                progress: progress,
+                dateTime: new Date().toLocaleString()
             };
 
             document.querySelector('.loading').style.display = 'block';
@@ -127,6 +185,7 @@
 
             fetch(scriptURL, {
                 method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             })
             .then(response => response.json())
@@ -135,7 +194,6 @@
                     document.querySelector('.popup').style.display = 'block';
                 }
                 document.querySelector('.loading').style.display = 'none';
-                clearForm();
             })
             .catch(error => {
                 console.error('Error!', error.message);
@@ -143,14 +201,15 @@
             });
         }
 
+        // Clear form fields and close the popup
         function clearForm() {
             document.getElementById('name').value = '';
-            document.getElementById('address').value = '';
-            document.getElementById('contact').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('website').value = '';
+            document.getElementById('pin').value = '';
+            document.getElementById('resources').innerHTML = '<option value="">Select a resource</option>';
+            document.getElementById('resources').disabled = true;
+            document.getElementById('progress').value = '';
+            document.querySelector('.popup').style.display = 'none';
         }
-
     </script>
 </body>
 </html>
