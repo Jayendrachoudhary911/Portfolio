@@ -1,8 +1,8 @@
 {
     "name": "Data Entry Web App",
-    "short_name": "DataEntry",
+    "short_name": "Daily Report",
     "description": "A web app for data entry and progress tracking.",
-    "start_url": "/gs/admin/28098756112/unit/unitary/sheet.html",
+    "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#020202",
