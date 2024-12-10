@@ -46,6 +46,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
 });
 
+<<<<<<< HEAD
 //this is for side bar
 
 function toggleSidebar() {
@@ -60,3 +61,17 @@ function toggleSidebar() {
         mainContent.style.marginLeft = "0";
     }
 }
+=======
+
+
+//this is for plan forms
+
+document.getElementById('closeBtn').addEventListener('click', function() {
+    var banner = document.getElementById('banner');
+    banner.style.display = 'none';
+    
+    var header = document.getElementById('header');
+    header.style.marginTop = '0';
+  });
+  
+>>>>>>> 3679ada2e39bbb631673db0c7a298e8c857b8bd4

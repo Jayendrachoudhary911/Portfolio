@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.plan-buttons {
+    display: flex;
+    justify-content: space-around; 
+    margin: 20px 0;
+}
+.plan-buttons button {
+    padding: 10px 20px;
+    font-size: 16px; 
+    cursor: pointer;
+}
+.popup {
+    display: none;
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    z-index: 9; 
+    border-radius: 20px;
+    background: #ffffffe5;
+    backdrop-filter: blur(15px);
+    padding: 20px;
+}
+.popup-content {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+.popup-form {
+    display: flex;
+    flex-direction: column;
+}
+.popup-form input, .popup-form textarea, .popup-form select {
+    margin: 5px 0;
+    padding: 10px; 
+    font-size: 16px;
+    background-color: #d8d8d846;
+    border: none;
+    border-radius: 10px;
+}
+.popup-form button {
+    padding: 10px;
+    background-color: #d6ffd6; 
+    color: #3b613b; 
+    font-weight: bolder;
+    border: none; 
+    border-radius: 10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.popup-form button:hover {
+    background-color: #3b613b;
+    color: #d6ffd6;
+}
+.popup-background {
+    display: none;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.4); 
+    z-index: 8;
+}
+.success-message {
+    display: none;
+    margin-top: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 460px;
+    transform: translate(-50%, -50%);
+    background-color: #deffd39d;
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    color: #34492e;
+    font-weight: bolder;
+    border-radius: 20px;
+    border: 1px solid #dddddd00;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+#basic-plan-btn {
+    background-color: #d6f0ff;
+    color: #364953;
+    border: none;
+    border-radius: 10px;
+    padding: 20px 28px;
+    font-weight: bolder;
+    transition: all 0.3s ease-in-out;
+}
+#basic-plan-btn:hover {
+    background-color: #364953;
+    color: #d6f0ff;
+}
+#pro-plan-btn {
+    background-color: #ffedba;
+    color: #64593b;
+    border: none;
+    border-radius: 10px;
+    padding: 20px 28px;
+    font-weight: bolder;
+    transition: all 0.3s ease-in-out;
+}
+#pro-plan-btn:hover {
+    background-color: #64593b;
+    color: #ffedba;
+}

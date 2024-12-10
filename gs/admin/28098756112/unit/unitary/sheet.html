@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Entry Web App</title>
+    <link rel="icon" type="image/png" href="https://wiyou.vercel.app/assets/logo.png">
+    <link rel="manifest" href="manifest.json">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ffffff;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 500px;
+            width: 90%;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        h2 {
+            font-weight: bolder;
+            margin-bottom: 20px;
+            color: #131313;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin: 5px 18px;
+        }
+        input[type="text"], select, input[type="number"] {
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        select {
+            background: #ffffff0e;
+        }
+        .button {
+            background-color: #020202;
+            color: white;
+            padding: 18px;
+            font-size: 16px;
+            border: 2px solid #020202;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .button:hover {
+            background-color: #ffffff;
+            color: #020202;
+        }
+        .button1 {
+            position: absolute;
+            top: 30px;
+            right: 10px;
+            background-color: #02020200;
+            color: rgb(0, 0, 0);
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #020202;
+            border-radius: 12px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .button1:hover {
+            background-color: #020202;
+            color: #ffffff;
+        }
+        .loading {
+            display: none;
+            padding: 10px;
+            margin-top: 15px;
+            background-color: #e6e6e6;
+            color: #1a1a1a;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        /* Popup styling */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup-message {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .popup-message h3 {
+            margin: 0 0 10px;
+            color: #3c763d;
+        }
+        .popup-message button {
+            background-color: #020202;
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .popup-message button:hover {
+            background-color: #ffffff;
+        }
+        @media (max-width: 480px) {
+            .title {
+                position: absolute;
+                top: 10px;
+            }
+            h2 {
+                font-size: 30px;
+            }
+            label {
+                display: block;
+                font-weight: bold;
+                margin: 5px 18px;
+            }
+            input[type="text"], select, input[type="number"] {
+                width: 100%;
+                padding: 20px;
+                margin: 0 0 40px 0;
+                border: 1px solid #ccc;
+                border-radius: 20px;
+                font-size: 14px;
+                box-sizing: border-box;
+            }
+            .clock_cont {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                text-align: center;
+            }
+            .greeting {
+                font-size: 21px;
+                margin: 0;
+            }
+
+            .clock {
+                display: none;
+                font-size: 1rem;
+                font-weight: bold;
+                padding: 0 20px;
+                border-radius: 8px;
+            }
+            .button {
+                font-size: 14px;
+            }
+        }
+
+                
+        /* Popup for install prompt */
+        .install-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(235, 235, 235, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .install-popup .popup-message {
+            background: #ffffff28;
+            color: #020202;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        .install-popup .popup-message h3 {
+            color: #020202;
+        }
+        .install-popup button {
+            background-color: #020202;
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bolder;
+            margin-top: 10px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .install-popup button:hover {
+            background-color: #ffffff;
+            color: #020202;
+            border: 2px solid #020202;
+            font-weight: bolder;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h2>Data Entry Form</h2>
+                <div class="clock_cont">
+                    <h1 class="greeting" id="greeting">Hello!</h1>
+                    <div class="clock" id="clock">00:00:00</div>
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+            <label for="resources">Resources Learned</label>
+            <select id="resources" required>
+                <option value="" disabled selected>Select a resource</option>
+                <option value="" disabled></option>
+                
+                <option value="" disabled style="text-align: center;">--------------Section 1--------------</option>
+                <option value="Kotlin, XML">Kotlin, XML</option>
+                <option value="Android/IOS Development">Android/IOS Development</option>
+                <option value="UI/UX, Branding">UI/UX, Branding</option>
+                <option value="" disabled></option>
+                
+                <option value="" disabled style="text-align: center;">--------------Section 2--------------</option>
+                <option value="DBMS (Database Management System)">DBMS (Database Management System)</option>
+                <option value="Server Management">Server Management</option>
+                <option value="Legal Documentation">Legal Documentation</option>
+                <option value="AI (NLP Trainings and AI embedding)">AI (NLP Trainings and AI embedding)</option>
+                <option value="" disabled></option>
+                
+                <option value="" disabled style="text-align: center;">--------------Section 3--------------</option>
+                <option value="JAVA">JAVA</option>
+                <option value="DSA (in Java)">DSA (in Java)</option>
+                <option value="3D modelling">3D modelling</option>
+                <option value="Content Writing, SEO">Content Writing, SEO</option>
+                <option value="Accounting/Finance">Accounting/Finance</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="progress">Progress (in words)</label>
+            <input type="text" id="progress" placeholder="Enter your progress" required>
+        </div>
+        <button class="button" onclick="submitData()">Submit</button>
+        <button class="button1" onclick="clearForm()">Clear Form</button>
+        <div class="loading">Sending data, please wait...</div>
+
+
+    <div class="popup-overlay" >
+        <div class="popup-message"id="popup">
+            <h3>Submission Successful!</h3>
+            <p>Your data has been successfully submitted.</p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+</div>
+        <div class="install-popup" id="installPopup">
+        <div class="popup-message">
+            <h3>Install App</h3>
+            <p>Would you like to install this app on your device?</p>
+            <button id="installButton">Install</button>
+        </div>
+    </div>
+    <script>
+        function updateClockAndGreeting() {
+            const clockElement = document.getElementById('clock');
+            const greetingElement = document.getElementById('greeting');
+
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+
+            // Format time as HH:MM:SS
+            const formattedTime = [
+                hours.toString().padStart(2, '0'),
+                minutes.toString().padStart(2, '0'),
+                seconds.toString().padStart(2, '0')
+            ].join(':');
+
+            // Display time
+            clockElement.textContent = formattedTime;
+
+            // Update greeting message based on the time of day
+            let greetingMessage = '';
+            if (hours < 12) {
+                greetingMessage = 'Good Morning!';
+            } else if (hours < 18) {
+                greetingMessage = 'Good Afternoon!';
+            } else {
+                greetingMessage = 'Good Evening!';
+            }
+        
+            // Display greeting message
+            greetingElement.textContent = greetingMessage;
+        }
+
+    // Update the clock and greeting every second
+    setInterval(updateClockAndGreeting, 1000);
+
+    // Initialize on page load
+    updateClockAndGreeting();
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwD1TduDn24J3cTeExS5uFl4isuILa7g5Q0GybK216cPEdeHBITYDSCBRy2h6EgXz0AAw/exec'; // Replace with your deployed web app URL
+        
+        function submitData() {
+            const name = document.getElementById('name').value;
+            const resources = document.getElementById('resources').value;
+            const progress = document.getElementById('progress').value;
+        
+            if (!name || !resources || !progress) {
+                alert('Please fill out all fields.');
+                return;
+            }
+        
+            const data = {
+                name: name,
+                resources: resources,
+                progress: progress
+            };
+        
+            document.querySelector('.loading').style.display = 'block';
+        
+            fetch(scriptURL, {
+                method: 'POST',
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                clearForm();
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                document.querySelector('.loading').style.display = 'none';
+            });
+        }
+        
+        function openPopup() {
+            document.getElementById('popup').style.display = 'flex';
+        }
+        
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+        
+        function clearForm() {
+            document.getElementById('name').value = "";
+            document.getElementById('resources').value = "";
+            document.getElementById('progress').value = "";
+        }
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then((registration) => {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.error('Service Worker registration failed:', error);
+                    });
+            });
+        }
+
+
+
+        let deferredPrompt;
+        const installPopup = document.getElementById('installPopup');
+        const installButton = document.getElementById('installButton');
+
+        // Show the install popup if the app is not installed
+        window.addEventListener('beforeinstallprompt', (event) => {
+            event.preventDefault();
+            deferredPrompt = event;
+            installPopup.style.display = 'flex'; // Show the install popup
+        });
+
+        // Handle the install button click
+        installButton.addEventListener('click', () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    } else {
+                        console.log('User dismissed the install prompt');
+                    }
+                    deferredPrompt = null;
+                    installPopup.style.display = 'none'; // Close the install popup after choice
+                });
+            }
+        });
+
+        // Close the popup if the user dismisses it
+        window.addEventListener('appinstalled', () => {
+            installPopup.style.display = 'none'; // Hide the popup after installation
+            console.log('App installed');
+        });
+        
+    </script>
+</body>
+</html>
