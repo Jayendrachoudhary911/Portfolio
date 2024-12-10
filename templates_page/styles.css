@@ -1003,6 +1003,15 @@ main {
 
 
 @media (max-width: 768px) {
+    .pop {
+        width: 97vw;
+        left: 50%;
+        top: 15%;
+        height: 60vh;
+    }
+    .pop p {
+        margin: 50% 22%;
+    }
     .footer-content {
         flex-direction: column;
     }
