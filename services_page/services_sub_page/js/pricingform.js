@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const webhostingServices = "Web Hosting";
     const smsServices = "Site Maintanance";
     const seoServices = "SEO - Search Engine Optimisation";
-    const proPlanschInfo = "School Pro Plan";
-    const basicPlanschInfo = "School Basic Plan";
+    const proPlanschInfo = "Pro Plan";
+    const basicPlanschInfo = "Basic Plan";
     const proPlanInfo = "Business Pro Plan";
     const basicPlanInfo = "Business Basic Plan";
 
@@ -115,22 +115,43 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    document.getElementById("pro-plan-sch-btn").addEventListener("click", function() {
-        showPopup(proPlanschInfo);
-        document.getElementById("message").value = "Web Development Basic Plan - ₹36,000/-";
-    });
-    document.getElementById("basic-plan-sch-btn").addEventListener("click", function() {
-        showPopup(basicPlanschInfo);
-        document.getElementById("message").value = "Web Development Basic Plan - ₹25,000/-";
-    });
-    document.getElementById("pro-plan-btn").addEventListener("click", function() {
-        showPopup(proPlanInfo);
-        document.getElementById("message").value = "Web Development Business Basic Plan - ₹43,500/-";
-    });
-    document.getElementById("basic-plan-btn").addEventListener("click", function() {
-        showPopup(basicPlanInfo);
-        document.getElementById("message").value = "Web Development Business Pro Plan - ₹34,400/-";
-    });
+    const proPlanschInfoBtn = document.getElementById("pro-plan-sch-btn");
+    if (proPlanschInfoBtn) {
+        proPlanschInfoBtn.addEventListener("click", function () {
+            showPopup(proPlanschInfo);
+            const message = document.getElementById("message");
+            if (message) message.value = "Web Development Basic Plan - ₹36,000/-";
+        });
+    }
+    
+    const basicPlanschInfoBtn = document.getElementById("basic-plan-sch-btn");
+    if (basicPlanschInfoBtn) {
+        basicPlanschInfoBtn.addEventListener("click", function () {
+            showPopup(basicPlanschInfo);
+            const message = document.getElementById("message");
+            if (message) message.value = "Web Development Basic Plan - ₹25,000/-";
+        });
+    }
+
+    
+    const proPlanInfoBtn = document.getElementById("pro-plan-btn");
+    if (proPlanInfoBtn) {
+        proPlanInfoBtn.addEventListener("click", function () {
+            showPopup(proPlanInfo);
+            const message = document.getElementById("message");
+            if (message) message.value = "Web Development Business Basic Plan - ₹43,500/-";
+        });
+    }
+    
+    const basicPlanInfoBtn = document.getElementById("basic-plan-btn");
+    if (basicPlanInfoBtn) {
+        basicPlanInfoBtn.addEventListener("click", function () {
+            showPopup(basicPlanInfo);
+            const message = document.getElementById("message");
+            if (message) message.value = "Web Development Business Pro Plan - ₹34,400/-";
+        });
+    }
+
 
     const popupBg = document.getElementById("popup-bg");
     if (popupBg) {
