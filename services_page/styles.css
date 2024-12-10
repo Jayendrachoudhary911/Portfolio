@@ -988,6 +988,9 @@ main {
 
 
 @media (max-width: 768px) {
+    .sidebar .side_cstm {
+        padding: 7% 3%;
+    }
     .footer-content {
         flex-direction: column;
     }
