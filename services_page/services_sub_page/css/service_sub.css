@@ -68,8 +68,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 200px;
-    height: 460px;
+    width: 100%;
+    height: 100%;
     transform: translate(-50%, -50%);
     background-color: #deffd39d;
     backdrop-filter: blur(20px);
