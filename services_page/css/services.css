@@ -1,0 +1,244 @@
+.services {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff; /* White background */
+  color: #000000; /* Black text */
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.container {
+    max-width: 1200px;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: slideIn 1.2s ease-out;
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(-20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.heading h1 {
+    font-family: "Protest Strike", sans-serif;
+    font-size: 62px;
+    font-style: normal;
+    font-weight: bolder;
+    color: #000000; /* Black heading */
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.heading p {
+    font-size: 18px;
+    color: #333; /* Dark gray for subtext */
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.service-item {
+    background-color: #f7f7f7; /* Light gray for cards */
+    border-radius: 15px;
+    padding: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    transform: scale(1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    height: 400px;
+}
+
+.service-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.service-item:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+}
+
+/* Hover effect: Show description on hover */
+.service-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.205); /* Dark overlay */
+    backdrop-filter: blur(30px);
+    color: #ffffff; /* White text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    padding: 0 44px;
+    text-align: center;
+    user-select: none;
+}
+
+.service-item:hover .service-content {
+    opacity: 1; /* Fade in content on hover */
+}
+
+.service-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 2;
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(to top, #00000056, #00000000);
+    padding: 40px 10px 10px 20px;
+    border-radius: 15px;
+    color: #ffffff; /* White text */
+    transition: transform 0.4s ease, opacity 0.4s ease; /* Move up effect */
+}
+
+.service-content h3 {
+    font-family: "Protest Strike", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 34px;
+    margin-bottom: 10px;
+    color: #f7f7f7;
+    cursor: default;
+}
+
+.service-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #f7f7f7;
+    cursor: default;
+}
+
+/* Button styling inside the hover */
+.service-content button {
+    background-color: #ffffff8f; /* White button */
+    border: none;
+    color: #000000; /* Black text */
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bolder;
+    border-radius: 8px;
+    cursor: pointer;
+    visibility: hidden; /* Hidden initially */
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.3s ease;
+}
+
+.service-item:hover .service-title {
+    opacity: 0;
+}
+
+.service-item:hover .service-content button {
+    visibility: visible; /* Show button on hover */
+    opacity: 1;
+    transform: translateY(0); /* Bring the button up */
+}
+
+.service-item:hover .service-content button:hover {
+    background-color: #33333359; /* Lighter black on hover */
+    color: #ffffff;
+    transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Why do you choose us? */
+.choose-us {
+    background-color: #ffffff; /* White background for the section */
+    padding: 50px 20px; /* Top and bottom padding */
+    overflow: hidden; /* Prevent overflow from animations */
+}
+
+.choose-us .container {
+    max-width: 1200px; /* Max width for the container */
+    margin: 0 auto; /* Center the container */
+    text-align: center; /* Center align text */
+}
+
+.choose-us h2 {
+    font-size: 2.5rem; /* Heading size */
+    margin-bottom: 30px; /* Space below the heading */
+    color: #000; /* Black color for the heading */
+}
+
+/* Grid styling for the timeline */
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+.timline-item {
+    background-color: #f7f7f7; /* Light background for each feature */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Inner padding */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex; /* Flex layout for icon and text */
+    align-items: center; /* Center icon and text vertically */
+    opacity: 0; /* Hidden by default */
+    transform: translateY(20px); /* Move down for entrance animation */
+}
+
+.grid-item {
+    width: 300px;
+    padding: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 15px;
+}
+.grid-item:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+    transform: translateY(-5px);
+}
+.grid-item.show {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move to original position */
+}
+
+.icon {
+    font-size: 2rem; /* Icon size */
+    margin-right: 15px; /* Space between icon and text */
+}
+
+.grid-item h3 {
+    font-size: 1.5rem; /* Subheading size */
+    margin-bottom: 10px; /* Space below subheading */
+    color: #000; /* Black color for subheading */
+}
+
+.grid-item p {
+    font-size: 1rem; /* Paragraph font size */
+    color: #333; /* Dark gray color for paragraph text */
+}
+
+/* This is for responsiveness */
+@media (max-width:768px)  {
+    .services_sec .container {
+        max-width: 100vw;
+    }
+}

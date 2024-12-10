@@ -1,7 +1,3 @@
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: 'Gilda Display', serif;
     margin: 0;
@@ -59,18 +55,6 @@ a {
 
 /* This is for header */
 
-.notice_banner {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    top: 0;
-    background-color: #ffe696af;
-    width: 95.6%;
-    border-radius: 10px;
-    height: 60px;
-    text-align: center;
-    margin: 10px 20px 0px 20px;
-}
 .close-btn {
     top: 5px;
     right: 10px;
@@ -100,6 +84,7 @@ a {
     align-items: center;
     width: 100%;
 }
+
 .openbtn {
     display: none;   
 }
@@ -175,10 +160,11 @@ a {
     background-color: #000;
     color: #fff;
     border-radius: 15px;
-    padding: 7% 0;
+    padding: 7% 25%;
     font-size: 20px;
-    margin: 10%;
+    margin: 30px;
 }
+
 .sidebar .closebtn {
     position: absolute;
     top: 0;
@@ -560,7 +546,7 @@ figure::after {
 
 
 /* Responsive design */
-@media (max-width: 575px) {
+@media (max-width: 768px) {
     .header {
         width: 89vw;
         margin: 10px;
@@ -621,7 +607,6 @@ figure::after {
         padding: 1vh 3vw;
     }
 }
-
 /* Additional styles */
 
 main {

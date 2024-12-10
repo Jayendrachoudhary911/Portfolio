@@ -60,3 +60,16 @@ function toggleSidebar() {
         mainContent.style.marginLeft = "0";
     }
 }
+
+
+
+
+//this is for plan forms
+
+document.getElementById('closeBtn').addEventListener('click', function() {
+  var banner = document.getElementById('banner');
+  banner.style.display = 'none';
+  
+  var header = document.getElementById('header');
+  header.style.marginTop = '0';
+});

@@ -1,0 +1,224 @@
+  /* Main Content */
+  .about {
+    padding: 20px;
+  }
+  
+  .about_title h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 2px solid #000000;
+    padding: 15px;
+    border-radius: 25px;
+  }
+  
+  .about_dets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 140px;
+    justify-content: center;
+    align-items: center;
+    padding: 110px 0;
+  }
+  
+  .about_img img {
+    width: 400px;
+    border-radius: 20px;
+  }
+  
+  .about_para p {
+    max-width: 600px;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    text-align: justify;
+    color: #000000;
+  }
+  
+  /* What We Do Section */
+  .about_what_we_do {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 80px 0;
+  }
+  .about_what_we_do h2 {
+    font-size: 2.6rem;
+  }
+  .about_what_sec {
+    display: grid;
+    width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+  }
+  
+  .about_what_text h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    align-self: center;
+    padding: 20px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: #fff;
+    border: 2px solid #000000;
+    transition: transform 0.3s, background-color 0.3s ease-in;
+    cursor: pointer;
+  }
+  
+  .about_what_text h3:hover {
+    transform: translateY(-5px);
+    background-color: #000000;
+    color: #fff;
+    border-radius: 375px;
+  }
+  
+  
+  /* Section Titles */
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 20px;
+  }
+  
+  /* Why Choose Us Section */
+  .about_why_choose_us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+  }
+  .about_why_title h2 {
+    font-weight: bolder;
+    color: #000000;
+    padding: 0 0 40px 0;
+  }
+  .about_why_content {
+    display: grid;
+    width: 700px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .why_card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .why_card h3 {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 10px;
+  }
+  
+  .why_card p {
+    color: #666;
+  }
+  
+  .why_card:hover {
+    transform: translateY(-5px);
+  }
+  
+ 
+/* About Vision Section */
+.about_vision, .about_lets_start {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .about_vision_content_wrapper, .about_lets_start_content_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .about_vision_text, .about_lets_text {
+    flex: 1;
+    max-width: 400px;
+  }
+  
+  .about_vision_text h2 {
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 15px;
+    text-align: left;
+  }  
+  .about_lets_text h2 {
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 15px;
+    text-align: right;
+  }
+  
+  .about_vision_text p {
+    font-size: 1rem;
+    color: #333333;
+    line-height: 1.5;
+  }
+  .about_lets_text p {
+    font-size: 1rem;
+    color: #333333;
+    line-height: 1.5;
+    text-align: right;
+  }
+  
+  .about_vision_img img, .about_lets_img img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive Styling */
+  @media screen and (max-width: 768px) {
+    .about_vision_content_wrapper, .about_lets_start_content_wrapper {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about_vision_img img, .about_lets_img img {
+      max-width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .about_vision_text h2, .about_lets_text h2 {
+      font-size: 1.5rem;
+    }
+  
+    .about_vision_text p, .about_lets_text p {
+      font-size: 0.9rem;
+    }
+  } 
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .why_card {
+      padding: 15px;
+    }
+  
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+  
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about_dets {
+      flex-direction: column;
+    }
+  }
+  

@@ -1,0 +1,233 @@
+.templates_section {
+    max-width: 1200px;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+.templates_heading {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: slideIn 1.2s ease-out;
+}
+.templates_heading h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: "Protest Strike", sans-serif;
+    font-size: 62px;
+    font-style: normal;
+    font-weight: bolder;
+    color: #000000; /* Black heading */
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.templates_heading p {
+    font-size: 18px;
+    color: #333; /* Dark gray for subtext */
+}
+
+.templates_tab {
+    padding: 10px 16px;
+    border-bottom: 3px #000 solid;
+    margin: 0 0 20px 0;
+}
+.templates_tab .templates_tab_list {
+    background-color: #f5f5f5;
+    backdrop-filter: blur(200px);
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 13px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, active 0.3s ease-in-out;
+}
+  
+.templates_tab .templates_tab_list:hover{
+    background-color: #1f1f1f;
+    color: #ffffff;
+ }
+.templates_tab .templates_tab_list.active {
+   background-color: #000000;
+   color: #ffffff;
+}
+
+.templates_cont {
+    display: flex;
+    flex-wrap: wrap;
+    width: 73vw;
+    gap: 20px;
+    padding: 0 40px;
+}
+.templates_cont .templates_cont_div {
+    cursor: pointer;  
+    display: grid;
+    background-color: #f7f7f7; /* Light gray for cards */
+    border-radius: 15px;
+    padding: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    transform: scale(1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.templates_cont .templates_cont_div img {
+    width: 400;
+    height: 300px;
+    border-radius: 20px;
+}
+
+.templates_cont_div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover effect: Show description on hover */
+.templates-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.205); /* Dark overlay */
+    backdrop-filter: blur(30px);
+    color: #ffffff; /* White text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    padding: 0 23%;
+    text-align: center;
+    user-select: none;
+}
+
+.templates_cont_div:hover .templates-content {
+    opacity: 1;
+}
+
+.templates_cont_div .templates-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 2;
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(to top, #00000056, #00000000);
+    padding: 10px 10px 10px 20px;
+    border-radius: 15px;
+    color: #ffffff; /* White text */
+    transition: transform 0.4s ease, opacity 0.4s ease; /* Move up effect */
+}
+
+.templates-content h3 {
+    font-family: "Protest Strike", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 34px;
+    margin-bottom: 10px;
+    color: #f7f7f7;
+    cursor: default;
+}
+
+.templates-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #f7f7f7;
+    cursor: default;
+}
+
+/* Button styling inside the hover */
+.templates-content .template_buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.templates-content .template_buttons button, .button_live {
+    background-color: #ffffff8f; /* White button */
+    border: none;
+    color: #000000; /* Black text */
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bolder;
+    border-radius: 8px;
+    cursor: pointer;
+    visibility: hidden; /* Hidden initially */
+    opacity: 0;
+}
+
+.templates-content .template_buttons .button_live {
+    background-color: transparent;
+    border: 2px solid #ffffff8f;
+    color: #ffffff;
+    transition: opacity 0.4s ease;
+}
+
+.templates-content .template_buttons button {
+    background-color: #ffffff8f; /* White button */
+    border: 2px solid #ffffff00;
+    color: #000000; /* Black text */
+    transition: opacity 0.4s ease;
+}
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 2px solid #1414148f;
+    color: #000000;
+    font-weight: bolder;
+    transition: background-color 0.4s ease;
+    cursor: pointer;
+}
+.templates_cont_div:hover .templates-title {
+    opacity: 0;
+}
+
+.templates_cont_div:hover .templates-content .template_buttons button, .button_live {
+    visibility: visible;
+    opacity: 1;
+}
+button{
+    visibility: visible;
+    opacity: 1;
+}
+.templates_cont_div:hover .templates-content .template_buttons button:hover, .button_live:hover {
+    background-color: #33333359;
+    color: #ffffff;
+    border: 2px solid #ffffff00;
+}
+button:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #000000;
+}
+
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.fade-in-scale {
+    animation: fadeInScale 0.5s ease forwards;
+}
+.portfolio-item {
+    transition: all 0.5s ease;
+}
+.portfolio-item.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    position: absolute;
+}
