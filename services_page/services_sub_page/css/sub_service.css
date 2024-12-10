@@ -192,4 +192,14 @@
     .service_feature_description {
         font-size: 0.9rem;
     }
+        .pricing_school {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .pro_plan, .basic_plan, .bus_pro_plan, .bus_basic_plan {
+        margin: 6px;
+        width: 100%;
+        border-radius: 15px;
+    }
 }
