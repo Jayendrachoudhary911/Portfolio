@@ -221,4 +221,134 @@
       flex-direction: column;
     }
   }
-  
+
+/* General Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+  .about_para p {
+    font-size: 1.1rem;
+  }
+
+  .about_img img {
+    width: 300px;
+  }
+
+  .about_title h1 {
+    font-size: 2rem;
+  }
+
+  .about_what_sec {
+    width: 90%;
+  }
+
+  .about_why_content {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about_title h1 {
+    font-size: 1.8rem;
+    padding: 10px;
+  }
+
+  .about_dets {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .about_img img {
+    width: 90%;
+  }
+
+  .about_para p {
+    font-size: 1rem;
+  }
+
+  .about_what_sec {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    width: 100%;
+  }
+
+  .about_why_content {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .why_card h3 {
+    font-size: 1.2rem;
+  }
+
+  .why_card p {
+    font-size: 0.9rem;
+  }
+
+  .about_vision_text, .about_lets_text {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about_title h1 {
+    font-size: 1.5rem;
+    padding: 8px;
+  }
+
+  .about_para p {
+    font-size: 0.95rem;
+  }
+
+  .about_img img {
+    width: 100%;
+  }
+
+  .about_what_sec {
+    grid-template-columns: 1fr;
+  }
+
+  .about_why_content {
+    grid-template-columns: 1fr;
+  }
+
+  .why_card {
+    padding: 10px;
+  }
+
+  .about_vision_img img, .about_lets_img img {
+    max-width: 100%;
+  }
+
+  .about_vision_text h2, .about_lets_text h2 {
+    font-size: 1.3rem;
+  }
+
+  .about_vision_text p, .about_lets_text p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Additional Adjustments for Very Small Screens */
+@media screen and (max-width: 360px) {
+  .about_title h1 {
+    font-size: 1.2rem;
+  }
+
+  .about_para p {
+    font-size: 0.85rem;
+  }
+
+  .why_card h3 {
+    font-size: 1rem;
+  }
+
+  .why_card p {
+    font-size: 0.8rem;
+  }
+
+  .about_vision_text h2, .about_lets_text h2 {
+    font-size: 1.2rem;
+  }
+
+  .about_vision_text p, .about_lets_text p {
+    font-size: 0.8rem;
+  }
+}
