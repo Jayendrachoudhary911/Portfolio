@@ -783,7 +783,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 80px;
-    background-image: url('./assets/footer_abstract.jpeg');
+    background-image: url('/assets/footer_abstract.jpeg');
     padding: 0px 260px;
     border-radius: 20px;
 }
