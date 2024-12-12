@@ -783,7 +783,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 80px;
-    background-image: url('./assets/footer_abstract.jpeg');
+    background-image: url('/assets/footer_abstract.jpeg');
     padding: 0px 260px;
     border-radius: 20px;
 }
@@ -999,6 +999,15 @@ main {
 
 
 @media (max-width: 768px) {
+    .pop {
+        width: 97vw;
+        left: 50%;
+        top: 15%;
+        height: 60vh;
+    }
+    .pop p {
+        margin: 50% 22%;
+    }
     .footer-content {
         flex-direction: column;
     }

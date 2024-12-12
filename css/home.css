@@ -11,7 +11,7 @@
     left: -190px;
 }
 
-.temp h1 {
+.temp h2 {
     font-size: 43px;
     font-weight: 700;
     line-height: 1.2;
@@ -85,6 +85,18 @@
       }
     }
     
+    .updating_soon_sec {
+      position: relative;
+      width: 100vw;
+      z-index: 1;
+      padding: 1px 20px;
+      top: 50%;
+      background-color: #fefefe;
+      left: 0;
+      transform: translate(0%, -50%);
+      text-align: center;
+      font-size: 42px;
+    }
     .card {
       flex: 0 0 auto;
       height: 250px;
@@ -761,5 +773,8 @@
     filter: opacity(100%);
     filter: grayscale(0%);
     transition: all 0.3s ease-in-out;
+  }
+  .updating_soon_sec {
+    left: 13%;
   }
 }
