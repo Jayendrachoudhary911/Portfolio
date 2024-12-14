@@ -123,6 +123,21 @@
     line-height: 1.5;
 }
 
+.pricing {
+    font-size: 30px;
+    color: #663100;
+    font-weight: bolder;
+    padding: -40px 0 20px 0;
+}
+.pricing_table, tr, th {
+    border: 1px solid;
+    padding: 10px 20px;
+    border-collapse: collapse;
+    text-align: justify;
+}
+.pricing_table td {
+    padding: 10px 20px;
+}
 /* Media Queries for Responsiveness */
 
 /* For tablets and smaller desktops */
